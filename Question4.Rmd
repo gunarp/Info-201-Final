@@ -15,7 +15,7 @@ library("knitr")
 
 ## Question 4 Analysis
 
-### How does class size affect the average GPA at each school? 
+### How does the average GPA change at each school as the class size increases? 
 
 Both the University of Washington and Virginia Tech have decreasing average GPA's the larger the class size gets. This suggests that class size and GPA are negatively correlated. Although the average GPA drops for both schools as class size increases, the University of Washington had consistently higher averages for each class size, and didn't see as big of a gap between class sizes. From the smallest class size to the largest, the University of Washington only saw a .098 point drop in average GPA, while Virginia Tech saw a .272 point drop in average GPA. 
 
