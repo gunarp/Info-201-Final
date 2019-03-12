@@ -1,0 +1,38 @@
+---
+title: "Question 3"
+author: "Aaron Quach"
+date: "March 11, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library('dplyr')
+library('knitr')
+library('stringr')
+library('ggplot2')
+source("Question2.R")
+```
+
+## Question 3 Analysis
+
+### Which departments at each of these schools offer classes that have relatively high class GPAs and low GPAs? 
+
+```{r uw_high_avg, echo = FALSE}
+uw_high_avg
+
+```
+```{r vt_high_avg, echo = FALSE}
+vt_high_avg
+
+```
+```{r uw_low_avg, echo = FALSE}
+uw_low_avg
+
+```
+```{r vt_low_avg, echo = FALSE}
+vt_low_avg
+
+```
+
+
