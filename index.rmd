@@ -1,7 +1,5 @@
 ---
-title: "How Majors Compare"
-author: "Peter Gunarso"
-date: "March 10, 2019"
+title: "Intro Course Comparisions"
 output: html_document
 ---
 
@@ -10,3 +8,114 @@ knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 source('analysis.r')
 ```
+
+## Introduction
+
+This section will discuss how first year students perform at the University of Washington and Virginia Tech.
+High school students often wonder what kind of experiences await them at their first year of University life, and observing the average GPAs of introductory courses can potentially help understand how classes will be. 
+Generally speaking, introductory classes with high average GPAs may indiciate an easy time, while classes with lower average GPAs may indicate a harder time. Additionally classes with average grades around 3.0 may indicate a competitive environment.
+
+If we examine the grade distributions across all introductory courses (100-level at UW and 1000-level at VT), we can get a vague idea of how an average freshman may be doing in terms of academics. A boxplot describing the distribution of grades in introductory courses at UW and VT is given below, in addition to the five number summaries which were responsible for creating it.
+
+```{r gen_sum, echo = FALSE, fig.align='center'}
+box_summary
+
+kable(rbind(uw_sum, vt_sum), row.names = FALSE)
+```
+
+From these summaries, we can see that the median grades for introductory courses at both UW and VT are around 3.4, which is fairly high! However, the spread of grades given is much higher at VT than at UW, meaning that first year students at UW can typically expect to have higher average GPAs than their counterparts at VT if they are only taking introductory level courses. The difference in spread can be explained by any number of things, such as harsher grading curves or harder courses. In any case, Freshman level students at UW can expect to have a more consistent grading experience across their courses.
+
+The remainder of this section will go in depth into potential first year experiences for students looking to go into either Computer Science or Business - two typically popular majors at many universities. This was done by gathering a list of classes that students hoping to enter the majors typically take, and comparing them across schools. Here we consider two types of students: students who enter college with little to no college credit (Type 1), and students who enter college with college credit relevant to their desired major (Type 2). More information about what credits these students might have entering college is given in their respective sections.
+
+## Computer Science
+
+Over the last decade, interest in computing related industries has grown considerably. As interest in computing has grown, student interest in computer science has grown as well, to the point where it is one of the most competitive majors at most universities offering it. Here we consider two possible types of students entering university with varying degrees of college credit. Here, Type 1 represents a student entering university without any college credit taken in high school, and a Type 2 with courses such as AP Computer Science, AP Calculus, and AP Physics done to waive introductory Computer Science, Calculus, and Physics course requirments.
+
+### Type 1
+
+A Type 1 student is one who enters University with no college credit. A list of potential classes they might take is given below:
+
+UW
+
+  - Chem 142
+  - Engl 111/121/141
+  - Math 124
+  - CSE 142
+  
+VT
+
+  - Chem 1035 & 1045
+  - Engl 1105 or 1106
+  - Math 1225
+  - CS 1114
+  
+Below is a bar chart comparing the average GPAs in each subject:
+
+```{r cs1_dist, fig.align='center', echo = FALSE}
+cs1
+```
+
+From this chart, it is clear that Chemistry, Computer Science, and Math courses are all competitive at both universities, as they all have average GPAs of around or below 3.0. This indicates that a first term freshmen going hoping to go into Computer Science might have a stressful first quarter.
+
+To get a more holistic picture of their first term, we can find the cumulative average GPA across all the courses they might take in a term:
+
+```{r cs1_sum, echo = FALSE}
+cs1_sum
+```
+
+For ease of reading, the chart also explicitly lists the average GPAs for both universities.
+
+From this chart, we can see that the average term GPA for students hoping to enter Computer Science at UW and VT are similar, with both sitting around 2.9. This indicates that no matter which unviersity a high schooler chooses, they will likely have a stressful first term or two completing the prerequisites for Computing related majors.
+
+### Type 2
+
+A Type 2 Computer Science student is defined as a student hoping to enter Computer Science who enters University with relevant college credits. These may include AP Computer Science, AP Phsyics, and AP Caluclus. Having these credits allow students to bypass some of the prerequisite courses needed for their desired major, and may have an impact on the academic experiences the student faces in their first term.
+
+Some possible courses a Type 2 Computer Science student might take include:
+
+UW
+
+  - Math 126
+  - CSE 143
+  - Engl 111/121/131
+  - Phys 123
+  
+VT
+  - Math 2204
+  - CS 2104
+  - Engl 1105/1106
+  - Phys 2305
+
+A chart with the GPAs by course is shown below:
+
+```{r cs2_dist, fig.align='center', echo = FALSE}
+cs2
+```
+
+```{r cs2_sum, echo = FALSE}
+cs2_sum
+```
+
+## Business
+
+### Type 1
+
+```{r bu1_dist, fig.align='center', echo = FALSE}
+bu1
+```
+
+```{r bu1_sum, echo = FALSE}
+bu1_sum
+```
+
+### Type 2
+
+```{r bu2_dist, fig.align='center', echo = FALSE}
+bu2
+```
+
+```{r bu2_sum, echo = FALSE}
+bu2_sum
+```
+
+## Conclusions
