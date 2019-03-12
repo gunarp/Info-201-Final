@@ -1,0 +1,181 @@
+---
+title: "Intro Course Comparisions"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+source('analysis.r')
+```
+
+## Introduction
+
+This section will discuss how first year students perform at the University of Washington and Virginia Tech.
+High school students often wonder what kind of experiences await them at their first year of University life, and observing the average GPAs of introductory courses can potentially help understand how classes will be. 
+Generally speaking, introductory classes with high average GPAs may indiciate an easy time, while classes with lower average GPAs may indicate a harder time. Additionally classes with average grades around 3.0 may indicate a competitive environment.
+
+If we examine the grade distributions across all introductory courses (100-level at UW and 1000-level at VT), we can get a vague idea of how an average freshman may be doing in terms of academics. A boxplot describing the distribution of grades in introductory courses at UW and VT is given below, in addition to the five number summaries which were responsible for creating it.
+
+```{r gen_sum, echo = FALSE, fig.align='center'}
+box_summary
+
+kable(rbind(uw_sum, vt_sum), row.names = FALSE)
+```
+
+From these summaries, we can see that the median grades for introductory courses at both UW and VT are around 3.4, which is fairly high! However, the spread of grades given is much higher at VT than at UW, meaning that first year students at UW can typically expect to have higher average GPAs than their counterparts at VT if they are only taking introductory level courses. The difference in spread can be explained by any number of things, such as harsher grading curves or harder courses. In any case, Freshman level students at UW can expect to have a more consistent grading experience across their courses.
+
+The remainder of this section will go in depth into potential first year experiences for students looking to go into either Computer Science or Business - two typically popular majors at many universities. This was done by gathering a list of classes that students hoping to enter the majors typically take, and comparing them across schools. Here we consider two types of students: students who enter college with little to no college credit (Type 1), and students who enter college with college credit relevant to their desired major (Type 2). More information about what credits these students might have entering college is given in their respective sections.
+
+## Computer Science
+
+Over the last decade, interest in computing related industries has grown considerably. As interest in computing has grown, student interest in computer science has grown as well, to the point where it is one of the most competitive majors at most universities offering it. Here we consider two possible types of students entering university with varying degrees of college credit. Here, Type 1 represents a student entering university without any college credit taken in high school, and a Type 2 with courses such as AP Computer Science, AP Calculus, and AP Physics done to waive introductory Computer Science, Calculus, and Physics course requirments.
+
+### Type 1
+
+A Type 1 student is one who enters University with no college credit. A list of potential classes they might take is given below:
+
+UW
+
+  - Chemistry 142
+  - English 111/121/141
+  - Math 124
+  - Computer Science 142
+  
+VT
+
+  - Chemistry 1035 & 1045
+  - English 1105 or 1106
+  - Math 1225
+  - Computer Science 1114
+  
+Below is a bar chart comparing the average GPAs in each subject:
+
+```{r cs1_dist, fig.align='center', echo = FALSE}
+cs1
+```
+
+From this chart, it is clear that Chemistry, Computer Science, and Math courses are all competitive at both universities, as they all have average GPAs of around or below 3.0. This indicates that a first term freshmen going hoping to go into Computer Science might have a stressful first quarter.
+
+To get a more holistic picture of their first term, we can find the cumulative average GPA across all the courses they might take in a term:
+
+```{r cs1_sum, fig.align = 'center', echo = FALSE}
+cs1_sum
+```
+
+For ease of reading, the chart also explicitly lists the average GPAs for both universities.
+
+From this chart, we can see that the average term GPA for students hoping to enter Computer Science at UW and VT are similar, with both sitting around 2.9. This indicates that no matter which unviersity a high schooler chooses, they will likely have a stressful first term or two completing the prerequisites for Computing related majors.
+
+### Type 2
+
+A Type 2 Computer Science student is defined as a student hoping to enter Computer Science who enters University with relevant college credits. These may include AP Computer Science, AP Phsyics, and AP Caluclus. Having these credits allow students to bypass some of the prerequisite courses needed for their desired major, and may have an impact on the academic experiences the student faces in their first term.
+
+Some possible courses a Type 2 Computer Science student might take include:
+
+UW
+
+  - Math 126
+  - Computer Science 143
+  - English 111/121/131
+  - Physics 123
+  
+VT
+  - Math 2204
+  - Computer Science 2104
+  - English 1105/1106
+  - Physics 2305
+
+A chart with the GPAs by course is shown below:
+
+```{r cs2_dist, fig.align='center', echo = FALSE}
+cs2
+```
+
+At first glance, it is clear that the grade distributions across these potential courses for Type 2 CS students is consistently higher than the potential courses for Type 1 CS students.
+
+To further investigate, we can observe the Term GPAs for these students at both schools:
+
+```{r cs2_sum, fig.align = 'center', echo = FALSE}
+cs2_sum
+```
+
+From this chart, it is clear that the average term GPA for a Type 2 CS student is notably higher than that of a Type 1 CS student (a difference of nearly 0.2).
+
+These results indicate that taking college credit in high school can possibly make it easier for students in their first terms at university. These results also indicate that both UW and VT have similar course grade constructions, as their term GPAs are very similar for both Type 1 and Type 2 CS students.
+
+## Business
+
+Business is another popular major at many universities across the nation. Business schools are generally prestigious institutions who receive a lot of funding, as they are often in high demand. Here we will consider a Type 1 student to again be a student who enters college with little to no credit, and a Type 2 student to have credit relevant to their desired major. In this case, a Type 2 student might have taken courses such as AP Calculus, AP Microeconomics, AP Macroeconomics. 
+
+### Type 1
+
+A list of potential classes a Type 1 Business student might take is given below:
+
+UW
+
+  - Math 124
+  - Engl 111/121/131
+  - Economics 200
+  - Psychology 101
+  
+VT
+  
+  - Math 1525
+  - English 1105/1106
+  - Economics 2005
+  - Psychology 1004
+
+A chart with GPAs for each subject is given below:
+
+```{r bu1_dist, fig.align='center', echo = FALSE}
+bu1
+```
+
+The records on this chart indicate that it is slightly easier to take a Type 1 first term at UW over VT, as the GPAs are higher at UW than VT for three subjects, with Econ and Psych being notably higher at UW than their VT equivalent. To more clearly make this comparison, we can observe potential Term GPAs:
+
+```{r bu1_sum, fig.align = 'center', echo = FALSE}
+bu1_sum
+```
+
+From this second chart, we can see that an average first term for a Type 1 Business student at UW is potentially easier than a first term at VT, as the UW Term average is nearly 0.2 points higher than the average of VT. However, as both averages are fairly close to 3.0, it would be reasonable to come to the conclusion that the Business programs at both schools are still competitive, although possible moreso at VT.
+
+### Type 2
+
+A Type 2 Business student is one who enters university with relevant college credit. This credit can be used to waive some of their prerequisite classes. These credits may be taken from AP tests like AP Calculus, AP Microeconomics, and AP Macroeconomics, and would lead to schedules which could look like:
+
+UW 
+
+  - Accounting 215
+  - English 111/121/131
+  - Economics 300
+
+VT
+
+  - Accounting 1504
+  - English 1105/1106
+  - Economics 3104
+  
+A chart displaying the averages for these courses is given below:  
+
+```{r bu2_dist, fig.align='center', echo = FALSE}
+bu2
+```
+
+From first glance, it is clear that the averages at VT are higher than their counterparts at UW for both Accounting and Economics. This might indicate a less compettive environment (for Accounting especially) or better quality teaching. In any case, it appears that a Type 2 Business student might have an easier first term at VT than at UW. To confirm this, we can examine Term GPAs for Type 2 Business students at both schools:
+
+```{r bu2_sum, fig.align = 'center', echo = FALSE}
+bu2_sum
+```
+
+From this chart, it is clear that Type 2 students at VT may have a much easier first term than those at UW, as the term average at VT is over 0.2 points higher than the average at UW. This might indicate that the 'weed out' period for Business, where classes are intentionallly harshly graded to remove as many candidates as possible, is shorter at VT than at UW. 
+
+## Conclusions
+
+The most interesting trends which appeared in the data analyzed in this section are:
+
+- Students who enter university with college credit tend to be in classes with higher GPAs than students entering unversity without college credits
+- Students hoping to enter Computer Science programs at the University of Washington or Virginia Tech will have similar GPAs in their first term (at either school)
+- Students hoping to enter Business programs at the University of Washington or Virginia Tech might have a harder time at VT for introductory level courses, but might enter the more gently graded higher level courses faster than their counterparts at UW.
+
+It is worth noting that this data is taken from class averages, which might not best reflect strictly freshmen behaviors, as introductory level classes can be taken at any point in a student's university carrer.

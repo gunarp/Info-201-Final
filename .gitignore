@@ -36,3 +36,6 @@ testing.R
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+
+# Personal Wrangling file
+testing.R
