@@ -187,3 +187,19 @@ vt_bu2 <- grab_relevant(vt_grades, c('ACIS 1504', 'ENGL 1105', 'ENGL 1106', 'ECO
 
 bu2 <- plot_dist(uw_bu2, vt_bu2, 'Type 2 Business')
 bu2_sum <- plot_summary(uw_bu2, vt_bu2, 'Type 2 Business')
+
+# Save Images
+
+# ggsave('./img/gen_sum.png', plot = box_summary)
+# 
+# ggsave('./img/cs1.png', plot = cs1)
+# ggsave('./img/cs1_sum.png', plot = cs1_sum)
+# 
+# ggsave('./img/cs2.png', plot = cs2)
+# ggsave('./img/cs2_sum.png', plot = cs2_sum)
+# 
+# ggsave('./img/bu1.png', plot = bu1)
+# ggsave('./img/bu1_sum.png', plot = bu1_sum)
+# 
+# ggsave('./img/bu2.png', plot = bu2)
+# ggsave('./img/bu2_sum.png', plot = bu2_sum)
