@@ -154,7 +154,7 @@ cs2_sum <- plot_summary(uw_cs2, vt_cs2, 'Type 2 CS')
 
 ## Type 1 Business
 
-# UW - Math 124, ENGL 111/121/131, ECON 200, PSYCH 100
+# UW - Math 124, ENGL 111/121/131, ECON 200, PSYCH 101
 uw_bu1 <- grab_relevant(uw_grades, c('MATH 124', 'ENGL 111', 'ENGL 121', 'ENGL 131', 'ECON 200', 'PSYCH 101')) %>% 
   mutate(
     School = 'UW'
