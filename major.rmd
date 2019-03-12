@@ -59,7 +59,7 @@ From this chart, it is clear that Chemistry, Computer Science, and Math courses 
 
 To get a more holistic picture of their first term, we can find the cumulative average GPA across all the courses they might take in a term:
 
-```{r cs1_sum, echo = FALSE}
+```{r cs1_sum, fig.align = 'center', echo = FALSE}
 cs1_sum
 ```
 
@@ -92,7 +92,7 @@ A chart with the GPAs by course is shown below:
 cs2
 ```
 
-```{r cs2_sum, echo = FALSE}
+```{r cs2_sum, fig.align = 'center', echo = FALSE}
 cs2_sum
 ```
 
@@ -104,7 +104,7 @@ cs2_sum
 bu1
 ```
 
-```{r bu1_sum, echo = FALSE}
+```{r bu1_sum, fig.align = 'center', echo = FALSE}
 bu1_sum
 ```
 
@@ -114,7 +114,7 @@ bu1_sum
 bu2
 ```
 
-```{r bu2_sum, echo = FALSE}
+```{r bu2_sum, fig.align = 'center', echo = FALSE}
 bu2_sum
 ```
 
