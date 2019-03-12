@@ -9,16 +9,20 @@ my_ui <- fluidPage(
     tabsetPanel(type = "tabs",
                 tabPanel(
                   "Freshman Courses", 
-                  p("blah blah blah")),
+                  includeHTML('major.html')
+                ),
                 tabPanel(
                   "Easiest Departments", 
-                  p("blah blah blah")),
+                  p("blah blah blah")
+                ),
                 tabPanel(
                   "Hardest Departments", 
-                  p("blah blah blah")),
+                  p("blah blah blah")
+                ),
                 tabPanel(
                   "Types of Teachers", 
-                  p("blah blah blah")),
+                  p("blah blah blah")
+                ),
                 tabPanel(
                   "Class Size", 
                   img(src = "img/q4.png", width = 600, height = 400, alt = "Average GPA per class size per school"),
