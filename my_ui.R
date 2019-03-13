@@ -90,8 +90,8 @@ my_ui <- fluidPage(
                          sidebarPanel(selectInput(
                            inputId = "subject", 
                            label = "Pick a Department:",            
-                           choices = c("All", "Math", "Science", "English", "Social Science"),
-                           selected = "All"
+                           choices = c("All Departments", "Math", "Science", "English", "Social Science"),
+                           selected = "All Departments"
                          )),
                          
                          mainPanel(
