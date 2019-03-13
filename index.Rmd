@@ -1,0 +1,20 @@
+---
+title: "UW vs VT"
+author: "Tensae Woldeselassie"
+date: "3/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("analysis.R")
+```
+
+## Question 3
+
+```{r uw_teaches_another_section_graph, fig.width=10, echo=FALSE}
+print(uw_graph)
+```
+
+```{r vt_teaches_another_section_graph, fig.width=10, echo=FALSE}
+print(vt_graph)
+```
