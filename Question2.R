@@ -11,7 +11,7 @@ uw_grades <- filter(uw_grades, Term == "20154 (Autumn 2015)")
 # Adds a department column for the uw grade data
 uw_grades$department <- word(uw_grades$Course_Number, 1)
 
-# Converts Virgina Tech grades from percentages into number of students 
+# Converts Virginia Tech grades from percentages into number of students 
 vt_grades <- vt_grades %>% 
   select("ï..Subject", Course_Title, GPA, As, Bs, Cs, Ds, Fs, Number_of_students)
 
