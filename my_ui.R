@@ -120,7 +120,7 @@ my_ui <- fluidPage(
                              class size and GPA are negatively correlated. We can see the effect of class size 
                              most significantly within the math department with a major drop in the average GPA 
                              from a class of less than 25 students to a class of 25-50 students. Most other 
-                             departments see a steady decrease in the average GPA as the class size increases, 
+                             departments see a steady decrease in the average GPA as the class size increased, 
                              with some notably larger drops. English, although decreasing slightly, sees very 
                              little change in the average GPA despite its class size."), 
                            br(),

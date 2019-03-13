@@ -147,7 +147,7 @@ my_server <- function(input, output) {
       geom_bar(stat="identity", position=position_dodge()) +
       scale_x_discrete(limits = positions) +
       scale_fill_manual(values = c('#8856a7','#99000d')) +
-      labs(title = paste0("GPA Based on Class Size for ", input$subject), y = "Average GPA") +
+      labs(title = paste0("GPA Based on Class Size for ", input$subject, y = "Average GPA") +
       theme(plot.title = element_text(hjust = 0.5)) 
   })
   
