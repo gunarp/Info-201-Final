@@ -11,8 +11,17 @@ my_ui <- fluidPage(
                   'Introduction'
                 ),
                 tabPanel(
-                  "Freshman Courses", 
-                  includeHTML('major.html')
+                  "Freshman Courses",
+                  sidebarLayout(
+                    sidebarPanel(
+                      selectInput(inputId = 'q1_select', label = 'Subsection', 
+                                  choices = c('Introduction', 'Computer Science', 'Business', 'Conclusion', 
+                                              selected = 'Introduction'))
+                    ),
+                    mainPanel(
+                      htmlOutput(outputId = 'q1_page')
+                    )
+                  )
                 ),
                 tabPanel(
                   "Easiest Departments", 
