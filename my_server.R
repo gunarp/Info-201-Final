@@ -56,8 +56,8 @@ names(uw_distinct_high)[names(uw_distinct_high) == "n_distinct(Course_Title)"] <
 
 uw_distinct_high <- arrange(uw_distinct_high, desc(`Number of Classes`))
 
-# Extracts the top 6 high GPA departments for UW
-uw_distinct_high <- uw_distinct_high[1:6,]
+# Extracts the top 10 high GPA departments for UW
+uw_distinct_high <- uw_distinct_high[1:10,]
 
 vt_distinct_high <- vt_grades_highest %>% 
   group_by(department) %>% 
@@ -66,18 +66,18 @@ names(vt_distinct_high)[names(vt_distinct_high) == "n_distinct(Course_Title)"] <
 
 vt_distinct_high <- arrange(vt_distinct_high, desc(`Number of Classes`))
 
-# Extracts the top 6 highest GPA departments for VT
-vt_distinct_high <- vt_distinct_high[1:6,]
+# Extracts the top 10 highest GPA departments for VT
+vt_distinct_high <- vt_distinct_high[1:10,]
 
-# Extracts the top 6 lowest GPA departments for UW
+# Extracts the top 10 lowest GPA departments for UW
 uw_distinct_low <- uw_grades_lowest %>% 
   group_by(department) %>% 
   summarise(n_distinct(Course_Title))
 names(uw_distinct_low)[names(uw_distinct_low) == "n_distinct(Course_Title)"] <- "Number of Classes"
 uw_distinct_low <- arrange(uw_distinct_low, desc(`Number of Classes`))
-uw_distinct_low <- uw_distinct_low[1:6,]
+uw_distinct_low <- uw_distinct_low[1:10,]
 
-# Extracts the top 6 lowest GPA departments for 
+# Extracts the top 10 lowest GPA departments for 
 vt_distinct_low <- vt_grades_lowest %>% 
   group_by(department) %>% 
   summarise(n_distinct(Course_Title))
@@ -85,7 +85,7 @@ names(vt_distinct_low)[names(vt_distinct_low) == "n_distinct(Course_Title)"] <- 
 
 vt_distinct_low <- arrange(vt_distinct_low, desc(`Number of Classes`))
 
-vt_distinct_low <- vt_distinct_low[1:6,]
+vt_distinct_low <- vt_distinct_low[1:10,]
 
 names(vt_distinct_low)[names(vt_distinct_low) == "department"] <- "Department"
 names(vt_distinct_high)[names(vt_distinct_high) == "department"] <- "Department"
@@ -137,7 +137,8 @@ my_server <- function(input, output) {
         title = "Departments at UW with High Class GPAs (GPA >= 3.8)", 
         x = "Departments", 
         y = "Number of Classes"
-      )
+      ) +
+      theme(plot.title = element_text(hjust = 0.5)) 
     uw_high_plot
   })
  # } else {
@@ -146,10 +147,11 @@ my_server <- function(input, output) {
     vt_high_plot <- ggplot(data = vt_distinct_high) +
       geom_col(mapping = aes(x = Department, y = `Number of Classes`), fill = "#99000d") +
       labs(
-        title = "Departments at VT with High Class GPAs (GPA <= 2.8)", 
+        title = "Departments at VT with High Class GPAs (GPA >= 3.8)", 
         x = "Departments", 
         y = "Number of Classes"
-      )
+      ) +
+      theme(plot.title = element_text(hjust = 0.5)) 
     vt_high_plot
   })
 #}
@@ -158,10 +160,11 @@ my_server <- function(input, output) {
     uw_low_plot <- ggplot(data = uw_distinct_low) +
       geom_col(mapping = aes(x = Department, y = `Number of Classes`), fill = "#8856a7") +
       labs(
-        title = "Departments at UW with High Class GPAs (GPA >= 3.8)", 
+        title = "Departments at UW with High Class GPAs (GPA <= 2.8)", 
         x = "Departments", 
         y = "Number of Classes"
-      )
+      ) + 
+      theme(plot.title = element_text(hjust = 0.5)) 
     uw_low_plot
   })
   output$vt_low <- renderPlot ({
@@ -172,7 +175,8 @@ my_server <- function(input, output) {
         title = "Departments at VT with High Class GPAs (GPA <= 2.8)", 
         x = "Departments", 
         y = "Number of Classes"
-      )
+      ) +
+      theme(plot.title = element_text(hjust = 0.5)) 
     vt_low_plot
   })
 }
