@@ -24,7 +24,8 @@ my_ui <- fluidPage(
         "Types of Teachers",
         selectInput(
           inputId = "select_school_q3",
-          label = "Select the school",
+          label = "Select a school",
+          selected = "University of Washington",
           choices = summary_all_grades$school
         ),
         select = "University of Washington",
