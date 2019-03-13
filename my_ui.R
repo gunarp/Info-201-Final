@@ -15,11 +15,19 @@ my_ui <- fluidPage(
                   sidebarLayout(
                     sidebarPanel(
                       selectInput(inputId = 'q1_select', label = 'Subsection', 
-                                  choices = c('Introduction', 'Computer Science', 'Business', 'Conclusion', 
-                                              selected = 'Introduction'))
+                                  choices = c('Introduction', 'Computer Science', 'Business', 'Conclusion'), 
+                                              selected = 'Introduction'),
+                      br(),
+                      
+                      conditionalPanel("input.q1_select == 'Computer Science' || input.q1_select == 'Business'",
+                                       selectInput(inputId = 'q1_type', label = 'Type', choices = c('Type 1', 'Type 2'),
+                                                   selected = 'Type 1'))
                     ),
                     mainPanel(
-                      htmlOutput(outputId = 'q1_page')
+                      htmlOutput(outputId = 'q1_page'), br(),
+                      conditionalPanel("input.q1_select == 'Computer Science' || input.q1_select == 'Business'",
+                        htmlOutput(outputId = 'q1_subsec')
+                      )
                     )
                   )
                 ),
