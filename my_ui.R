@@ -122,30 +122,31 @@ my_ui <- fluidPage(
                          sidebarPanel(selectInput(
                            inputId = "subject", 
                            label = "Pick a Department:",            
-                           choices = c("All", "Math", "Science", "English", "Social Science"),
-                           selected = "All"
+                           choices = c("All Departments", "Math", "Science", "English", "Social Science"),
+                           selected = "All Departments"
                          )),
                          
                          mainPanel(
                            titlePanel("Class Size"),
                            plotOutput("q4plot"),
-                           p("Typically, as class size increased, the average GPA decreased. This suggests that 
-                             class size and GPA are negatively correlated. We can see the effect of class size 
-                             most significantly within the math department with a major drop in the average GPA 
-                             from a class of less than 25 students to a class of 25-50 students. Most other 
+                           p("Typically, as class size increased, the average GPA decreased. This suggests 
+                             that class size and GPA are negatively correlated. We can see the effect of class 
+                             size most significantly within the math department with a major drop in the average 
+                             GPA from a class of less than 25 students to a class of 25-50 students. Most other 
                              departments see a steady decrease in the average GPA as the class size increases, 
                              with some notably larger drops. English, although decreasing slightly, sees very 
-                             little change in the average GPA despite its class size."), 
+                             little change in the average GPA despite its class size. "), 
                            br(),
-                           p("The decreasing average GPA could be the result of multiple factors. Easier classes 
-                             will typically have higher GPA's and often times larger classes are general 
-                             introduction courses and are therefore easier than their smaller, more specified 
-                             counterparts. Larger courses may also have more resources (Teachers, Teaching 
-                             Assistants, Office Hours, Study Centers) for them, making it easier to do well in 
-                             that class. Additionally, the range of student abilities within larger classes is 
-                             typically much wider, limiting the scope of the class and the material covered. 
-                             This in turn lowers expectations and leads to easier assignments, midterms and 
-                             finals.")
+                           p("The decreasing average GPA could be the result of multiple factors. Often times, 
+                             larger classes are general introduction courses and can then be used as “weed-out” classes 
+                             for particular majors. This means these larger courses may be graded more harshly or made 
+                             more difficult to differentiate top students in those subjects. On top of this, many intro 
+                             level courses are required for a lot majors but are not necessarily the focus of the major 
+                             and must just be taken as a course prerequisite. This may lead to lower motivation from 
+                             students to do exceptionally well in the course, in turn producing lower average GPA’s. 
+                             Finally, students in larger classes may have a more difficult time receiving help in these 
+                             courses, with so many students for just the one teacher. This could then result in a lower 
+                             average GPA.")
                            )
                     )
 
