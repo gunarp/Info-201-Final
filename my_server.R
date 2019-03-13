@@ -1,3 +1,4 @@
+source('wrangle3.R')
 source('wrangle4.R')
 source('wrangle2.R')
 
@@ -148,6 +149,56 @@ my_server <- function(input, output) {
       scale_fill_manual(values = c('#8856a7','#99000d')) +
       labs(title = "GPA Based on Class Size", y = "Average GPA") +
       theme(plot.title = element_text(hjust = 0.5)) 
+  })
+  
+  output$graph_q3 <- renderPlot({
+    summary_all_grades <- summary_all_grades %>%
+      filter(school == input$select_school_q3)
+    
+    if (input$select_school_q3 == "University of Washington") {
+      ggplot(data = summary_all_grades,
+             mapping = aes(
+               x = Subject,
+               y = avg_gpa,
+               fill = teaches_multiple
+             )
+      ) +
+        geom_col(position = "dodge") +
+        labs(
+          title = "University of Washington Average Subjectal Grades for 
+          Professors Teaching a Single Course vs Multiple Courses",
+          x = "Subject",
+          y = "Grade Point Average",
+          fill = "Teaches Multiple Courses"
+        ) +
+        scale_x_discrete(labels = c(
+          "Biology", "Chemistry", "Computer Science",
+          "Informatics", "Math", "Physics"
+        )) +
+        scale_fill_manual(values = c("white", "black"))
+    } else {
+      ggplot(summary_all_grades,
+             mapping = aes(
+               x = Subject,
+               y = avg_gpa,
+               fill = teaches_multiple
+             )
+      ) +
+        geom_col(position = "dodge") +
+        labs(
+          title = "Virginia Tech Average Subject Grades for Professors 
+      Teaching a Single Course vs Multiple Courses",
+          x = "Subject",
+          y = "Grade Point Average",
+          fill = "Teaches Multiple Courses"
+        ) +
+        scale_x_discrete(labels = c(
+          "Biology", "Chemistry", "Computer Science",
+          "Math", "Physics"
+        )) +
+        scale_fill_manual(values = c("white", "black"))
+    }
+    # bar_graph_q3
   })
   
 }

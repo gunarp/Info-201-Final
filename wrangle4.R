@@ -1,4 +1,7 @@
-virginia_tech <- read.csv("data/vt_grades.csv", stringsAsFactors = FALSE) 
+virginia_tech <- read.csv("data/vt_grades.csv", stringsAsFactors = FALSE) %>% 
+  rename(
+    Subject = 'ï..Subject'
+  )
 
 uw <- read.csv("data/uw_grades.csv", stringsAsFactors = FALSE)
 

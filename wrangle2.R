@@ -9,7 +9,7 @@ uw_grades$department <- word(uw_grades$Course_Number, 1)
 
 # Converts Virginia Tech grades from percentages into number of students 
 vt_grades <- vt_grades %>% 
-  select("Subject", Course_Title, GPA, As, Bs, Cs, Ds, Fs, Number_of_students)
+  select("ï..Subject", Course_Title, GPA, As, Bs, Cs, Ds, Fs, Number_of_students)
 
 vt_grades$As <- round(vt_grades$As * vt_grades$Number_of_students / 100)
 vt_grades$Bs <- round(vt_grades$Bs * vt_grades$Number_of_students / 100)
@@ -18,7 +18,7 @@ vt_grades$Ds <- round(vt_grades$Ds * vt_grades$Number_of_students / 100)
 vt_grades$Fs <- round(vt_grades$Fs * vt_grades$Number_of_students / 100)
 vt_grades$Average_GPA <- vt_grades$GPA
 vt_grades <- vt_grades %>% 
-  select("Subject", Course_Title, As, Bs, Cs, Ds, Fs, Average_GPA)
+  select("ï..Subject", Course_Title, As, Bs, Cs, Ds, Fs, Average_GPA)
 # Consolidates UW grades into rounded letter grades 
 uw_grades$As <- uw_grades$A + uw_grades$A_Minus
 uw_grades$Bs <- uw_grades$B + uw_grades$B_Minus + uw_grades$B_Plus
@@ -31,7 +31,7 @@ uw_grades <- uw_grades %>%
 # Converts all blank data into 0 in both UW and VT data 
 uw_grades[is.na(uw_grades)] <- 0
 vt_grades[is.na(vt_grades)] <- 0
-names(vt_grades)[names(vt_grades) == "Subject"] <- "department"
+names(vt_grades)[names(vt_grades) == "ï..Subject"] <- "department"
 
 # Remove pass/fail classes and seminar classes from both data sets
 uw_grades_highest <- uw_grades %>% 
