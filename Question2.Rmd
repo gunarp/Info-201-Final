@@ -1,0 +1,61 @@
+---
+title: "Question 3"
+author: "Aaron Quach"
+date: "March 11, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library('dplyr')
+library('knitr')
+library('stringr')
+library('ggplot2')
+source("Question2.R")
+```
+
+## Question 3 Analysis
+
+### Which departments at each of these schools offer classes that have relatively high class GPAs and low GPAs? 
+
+```{r uw_high_avg, echo = FALSE}
+uw_high_avg
+
+```
+```{r vt_high_avg, echo = FALSE}
+vt_high_avg
+
+```
+```{r uw_low_avg, echo = FALSE}
+uw_low_avg
+
+```
+```{r vt_low_avg, echo = FALSE}
+vt_low_avg
+
+```
+
+The first graph displays the top 6 departments at the at the University of Washington 
+where  a number of classes in each of these departments have an average GPA at or above a 3.8. 
+From this graph the English department and Sociology departments have the most number
+of classes with 20 or more classes where students got high averages.
+
+The second graph displays the top 6 departments at Virginia Tech where the
+number of classes in each of these departments have an average GPA at or above a 3.8 and while 
+none of the departments have more than 20 classes where students get high averages, 
+the distribution is less as more than all 6 of the departments shown have more than
+10 classes where the average GPA was or above a 3.8. However, for Virginia Tech, their 
+top departments are Education Curriculum and Instruction and English. 
+
+The third graph shows the top 6 departments at the University of Washington where
+the number of classes in each of these departments have an average GPA at or below a 2.8. 
+In this graph, Math has the most amount of classes at 14 while the second highest is 
+the Biology department which has 8 classes with a low average GPA. 
+
+The fourth graph shows the top 6 departments at Virgina Tech where the
+number of classes in each of these departments have an average GPa at or below a 2.8.
+In this graph the Math department and Electrical Computer Engineer department 
+have the most amount of classes which has similarities to the UW data as the
+Math department also had the highest number of classes with low GPAs. 
+
+
