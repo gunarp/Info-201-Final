@@ -4,8 +4,7 @@
 # import uw and vt  Autumn 2015 grades data
 uw_grades <- read.csv("data/uw_grades.csv", stringsAsFactor = FALSE) %>%
   filter(Term == "20154 (Autumn 2015)") 
-vt_grades <- read.csv("data/vt_grades.csv", stringsAsFactor = FALSE) %>% 
-  rename(Subject = 'ï..Subject')
+vt_grades <- read.csv("data/vt_grades.csv", stringsAsFactor = FALSE) 
 
 # New row called Subject created by removing the number and section letter
 # from Course_Number in uw grades

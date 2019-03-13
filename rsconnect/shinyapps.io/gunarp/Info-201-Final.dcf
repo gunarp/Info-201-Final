@@ -5,8 +5,8 @@ account: gunarp
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 786314
-bundleId: 1935752
+bundleId: 1936796
 url: https://gunarp.shinyapps.io/Info-201-Final/
-when: 1552463731.33804
+when: 1552491665.5164
 asMultiple: FALSE
 asStatic: FALSE
