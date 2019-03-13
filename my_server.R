@@ -52,53 +52,51 @@ summary_all_grades <- rbind(summary_uw_grades, summary_vt_grades)
 
 
 my_server <- function(input, output) {
-  output$graph_q3 <- renderPlot({
-    summary_all_grades <- summary_all_grades %>%
-      filter(school == input$select_school_q3)
+  output$uw_graph_q3 <- renderPlot({
+    uw_graph <- ggplot(summary_uw_grades,
+      mapping = aes(
+        x = Subject,
+        y = avg_gpa,
+        fill = teaches_multiple
+      )
+    ) +
+      geom_col(position = "dodge") +
+      labs(
+        title = "University of Washington Average Subjectal Grades for
+          Professors Teaching a Single Course vs Multiple Courses",
+        x = "Subject",
+        y = "Grade Point Average",
+        fill = "Teaches Multiple Courses"
+      ) +
+      scale_x_discrete(labels = c(
+        "Biology", "Chemistry", "Computer Science",
+        "Informatics", "Math", "Physics"
+      )) +
+      scale_fill_manual(values = c("#8856a7", "gold"))
+    uw_graph
+  })
 
-    if (input$select_school_q3 == "University of Washington") {
-      ggplot(summary_all_grades,
-        mapping = aes(
-          x = Subject,
-          y = avg_gpa,
-          fill = teaches_multiple
-        )
-      ) +
-        geom_col(position = "dodge") +
-        labs(
-          title = "University of Washington Average Subjectal Grades for 
-      Professors Teaching a Single Course vs Multiple Courses",
-          x = "Subject",
-          y = "Grade Point Average",
-          fill = "Teaches Multiple Courses"
-        ) +
-        scale_x_discrete(labels = c(
-          "Biology", "Chemistry", "Computer Science",
-          "Informatics", "Math", "Physics"
-        )) +
-        scale_fill_manual(values = c("white", "black"))
-    } else {
-      ggplot(summary_all_grades,
-        mapping = aes(
-          x = Subject,
-          y = avg_gpa,
-          fill = teaches_multiple
-        )
-      ) +
-        geom_col(position = "dodge") +
-        labs(
-          title = "Virginia Tech Average Subject Grades for Professors 
+  output$vt_graph_q3 <- renderPlot({
+    vt_graph <- ggplot(summary_vt_grades,
+      mapping = aes(
+        x = Subject,
+        y = avg_gpa,
+        fill = teaches_multiple
+      )
+    ) +
+      geom_col(position = "dodge") +
+      labs(
+        title = "Virginia Tech Average Subject Grades for Professors
       Teaching a Single Course vs Multiple Courses",
-          x = "Subject",
-          y = "Grade Point Average",
-          fill = "Teaches Multiple Courses"
-        ) +
-        scale_x_discrete(labels = c(
-          "Biology", "Chemistry", "Computer Science",
-          "Math", "Physics"
-        )) +
-        scale_fill_manual(values = c("white", "black"))
-    }
-    # bar_graph_q3
+        x = "Subject",
+        y = "Grade Point Average",
+        fill = "Teaches Multiple Courses"
+      ) +
+      scale_x_discrete(labels = c(
+        "Biology", "Chemistry", "Computer Science",
+        "Math", "Physics"
+      )) +
+      scale_fill_manual(values = c("#99000d", "#E87722"))
+    vt_graph
   })
 }
