@@ -2,8 +2,8 @@
 ## Team 1 (AMPT)
 ----
 
-This repo contanins R code for generating a shiny app about University of Washington 
-and Virginia Tech Grades and compares the two, using data from an [FOIA request](https://docs.google.com/spreadsheets/d/1jPKV7YmXYSUWG9GeP41rAr64X3UjtzSRHiiUGAjCMAc/edit#gid=0)  
+This repo contanins R code for generating a shiny app about _University of Washington_ 
+and _Virginia Tech_ Grades and compares the two, using data from an [FOIA request](https://docs.google.com/spreadsheets/d/1jPKV7YmXYSUWG9GeP41rAr64X3UjtzSRHiiUGAjCMAc/edit#gid=0)  
 
 The shiny app has visualizations to answer the following questions:
 - How do the GPAs for intro level courses from the University of Washington compare to those of Virginia Tech?
