@@ -56,12 +56,16 @@ summary_all_grades <- rbind(summary_uw_grades, summary_vt_grades)
 
 # bar graph of uw grades
 uw_graph <- ggplot(summary_uw_grades,
-  mapping = aes(x = Subject, y = avg_gpa, fill = teaches_multiple)
+  mapping = aes(
+    x = Subject,
+    y = avg_gpa,
+    fill = teaches_multiple
+  )
 ) +
   geom_col(position = "dodge") +
   labs(
-    title = "University of Washington Average Subjectal Grades for 
-    Professors Teaching a Single Course vs Multiple Courses",
+    title = "University of Washington Average Subjectal Grades for
+          Professors Teaching a Single Course vs Multiple Courses",
     x = "Subject",
     y = "Grade Point Average",
     fill = "Teaches Multiple Courses"
@@ -70,8 +74,10 @@ uw_graph <- ggplot(summary_uw_grades,
     "Biology", "Chemistry", "Computer Science",
     "Informatics", "Math", "Physics"
   )) +
-  scale_fill_manual(values = c('#8856a7','#8856b9'))
+  scale_fill_manual(values = c("#8856a7", "gold"))
+
 plot(uw_graph)
+
 
 # bar graph of vt grades
 vt_graph <- ggplot(summary_vt_grades,
@@ -88,6 +94,6 @@ vt_graph <- ggplot(summary_vt_grades,
   scale_x_discrete(labels = c(
     "Biology", "Chemistry", "Computer Science",
     "Math", "Physics"
-  )) + scale_fill_manual(values = c('#8856a7','#8856b9'))
+  )) + scale_fill_manual(values = c("#8856a7", "#8856b9"))
 
 plot(vt_graph)
