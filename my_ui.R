@@ -15,12 +15,22 @@ my_ui <- fluidPage(
                   includeHTML('major.html')
                 ),
                 tabPanel(
-                  "Easiest Departments", 
-                  p("blah blah blah")
+                  "High GPA Departments", 
+                  selectInput(inputId = "school_select_high", 
+                              label = "School of Interest:", 
+                              choices = c("University of Washington", "Virginia Tech"),
+                              selected = "University of Washington"
+                  ),
+                  plotOutput("uw_high"), plotOutput("vt_high")
                 ),
                 tabPanel(
-                  "Hardest Departments", 
-                  p("blah blah blah")
+                  "Low GPA Departments", 
+                  selectInput(inputId = "school_select_low", 
+                              label = "School of Interest:", 
+                              choices = c("University of Washington", "Virginia Tech")
+                  ), 
+
+                  plotOutput("uw_low"), plotOutput("vt_low")
                 ),
                 tabPanel(
                   "Types of Teachers", 

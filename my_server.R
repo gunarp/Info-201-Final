@@ -126,6 +126,53 @@ vt_low_avg <- ggplot(data = vt_distinct_low) +
   )
 
 my_server <- function(input, output) {
-  
-  
+  # Renders a plot with the selected years in the x axis and the area in the y axis
+  #if(input$school_select_high == "University of Washington") {
+
+  output$uw_high <- renderPlot ({
+    
+    uw_high_plot <- ggplot(data = uw_distinct_high) +
+      geom_col(mapping = aes(x = Department, y = `Number of Classes`), fill = "#8856a7") +
+      labs(
+        title = "Departments at UW with High Class GPAs (GPA >= 3.8)", 
+        x = "Departments", 
+        y = "Number of Classes"
+      )
+    uw_high_plot
+  })
+ # } else {
+  output$vt_high <- renderPlot ({
+    
+    vt_high_plot <- ggplot(data = vt_distinct_high) +
+      geom_col(mapping = aes(x = Department, y = `Number of Classes`), fill = "#99000d") +
+      labs(
+        title = "Departments at VT with High Class GPAs (GPA <= 2.8)", 
+        x = "Departments", 
+        y = "Number of Classes"
+      )
+    vt_high_plot
+  })
+#}
+  output$uw_low <- renderPlot ({
+    
+    uw_low_plot <- ggplot(data = uw_distinct_low) +
+      geom_col(mapping = aes(x = Department, y = `Number of Classes`), fill = "#8856a7") +
+      labs(
+        title = "Departments at UW with High Class GPAs (GPA >= 3.8)", 
+        x = "Departments", 
+        y = "Number of Classes"
+      )
+    uw_low_plot
+  })
+  output$vt_low <- renderPlot ({
+    
+    vt_low_plot <- ggplot(data = vt_distinct_low) +
+      geom_col(mapping = aes(x = Department, y = `Number of Classes`), fill = "#99000d") +
+      labs(
+        title = "Departments at VT with High Class GPAs (GPA <= 2.8)", 
+        x = "Departments", 
+        y = "Number of Classes"
+      )
+    vt_low_plot
+  })
 }
