@@ -2,13 +2,16 @@ library("shiny")
 library("ggplot2")
 library("tidyr")
 
+source('wrangle3.R')
+
 my_ui <- fluidPage(
-  titlePanel(strong("Final Project")),
-  
+  titlePanel('Final Project'),
+
   mainPanel(
     tabsetPanel(type = "tabs",
                 tabPanel(
-                  'Introduction'
+                  'Introduction',
+                  includeHTML('./www/pages/introduction.html')
                 ),
                 tabPanel(
                   "Freshman Courses",
@@ -83,9 +86,25 @@ my_ui <- fluidPage(
                   )  
                 ),
                 tabPanel(
-                  "Types of Teachers", 
-                  p("blah blah blah")
-                ),
+                  "Types of Teachers",
+                  selectInput(
+                    inputId = "select_school_q3",
+                    label = "Select a school",
+                    selected = "University of Washington",
+                    choices = summary_all_grades$school
+                  ),
+                  select = "University of Washington",
+                  plotOutput("graph_q3"),
+                  
+                  p("We couldn't find any consistent link between the amount of sections a 
+                    professor teaches versus the average GPA students in their classes receive.
+                    Interestingly enough,four out of the six subject areas we examined at the 
+                    University of Washington showed higher average GPAs for professors teaching one 
+                    section in the quarter, while only one out of the five subject areas we examined
+                    at Virginia Tech showed a higher average GPA for professors teaching one section 
+                    in the quarter. This goes to show that professors can handle teaching multiple 
+                    sections as long as they aren't overwhelmed.")
+                  ),
                 tabPanel("Class Size",
                          sidebarPanel(selectInput(
                            inputId = "subject", 
@@ -116,6 +135,7 @@ my_ui <- fluidPage(
                              finals.")
                            )
                     )
+
     )
   )
 )

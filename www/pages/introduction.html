@@ -187,9 +187,257 @@ $(document).ready(function () {
 </div>
 
 
-<div id="computer-science" class="section level2">
-<h2>Computer Science</h2>
-<p>Over the last decade, interest in computing related industries has grown considerably. As interest in computing has grown, student interest in computer science has grown as well, to the point where it is one of the most competitive majors at most universities offering it. Here we consider two possible types of students entering university with varying degrees of college credit. Here, Type 1 represents a student entering university without any college credit taken in high school, and a Type 2 with courses such as AP Computer Science, AP Calculus, and AP Physics done to waive introductory Computer Science, Calculus, and Physics course requirements.</p>
+<div id="section-1-problem-domain-description" class="section level2">
+<h2>Section 1: Problem Domain Description</h2>
+<p>Our data provides the grade distribution and grade point averages (GPA) for the University of Washington and Virginia tech for courses during the fall quarter of 2015. The GPA is the grade given to a student to measure their performance in the course based on how well they did on their assignments and exams. GPAs are based on a 4.0 scale with a 0.0 being the lowest grade and 4.0 being the highest. Having a grade distribution and GPA for a university can help current and future students decide what university and classes are best for them.</p>
+<div id="section-1.1-critical-analysis-questions" class="section level3">
+<h3>Section 1.1: Critical Analysis Questions</h3>
+<p><strong>Critical questions that arise from this datasets includes:</strong></p>
+<ol style="list-style-type: decimal">
+<li>How do the GPAs for intro level courses from the University of Washington compare to those of Virginia Tech?</li>
+</ol>
+<ul>
+<li>GPAs can be an indicator for multiple things, including quality of education/teaching and level of difficulty, both of which can be major factors for a student deciding between multiple schools.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>What are the easiest classes from each school? What are the hardest classes from each school?</li>
+</ol>
+<ul>
+<li>If the most difficult classes from each school are similar this may suggest that particular courses or even departments tend to be more challenging for students. On the other hand, if the easiest courses are similar, then this may demonstrate that those courses/subjects are less demanding. Understanding the level of difficulty for students can help them with course planning and determining which classes to take.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>How does the GPA for courses taught by Professors instructing multiple courses compare to those instructing a single class?</li>
+</ol>
+<ul>
+<li>The GPA for these courses may help students decide on which teacher they want for their classes. If the GPA is higher for teachers with multiple classes this may argue that those professors have a greater understanding of the material or a better understanding in how to teach it. Alternatively, if the GPA is lower for teachers with multiple classes, this may mean that these instructors are not as effective in teaching the material, or possibly that teaching several courses can be too much to handle for a single instructor. These facts are important for both students and University faculty.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>How do class sizes for each department in each school compare between the University of Washington and Virginia Tech?</li>
+</ol>
+<ul>
+<li>Class sizes can be very important to some students and could influence their decision on which school to attend. This can also show how the teacher to student ratio affects the overall GPA for that school, which would be something each University should take into consideration.</li>
+</ul>
+</div>
+</div>
+<div id="section-2-data-description" class="section level2">
+<h2>Section 2: Data Description</h2>
+<p>Our group found data sets containing grading information for every class in the Fall 2015 quarter at the University of Washington, Seattle Campus, and Virginia Tech. The data sets include information such as: the course number, the course title, the name of the instructor, the number of students in the course, the distribution of grades, and the GPA for the course.</p>
+<p>Our group found these data sets through an <a href="https://austingwalters.com/foia-requesting-100-universities/"><strong>article</strong></a> analyzing the response rate of many universities to FOIA (Freedom of Information Act) requests. These data sets were collected under the <a href="https://foia.state.gov/Learn/FOIA.aspx"><strong>Freedom of Information Act</strong></a>, which mandates that any person has the right to request federal records and information.</p>
+<p>Sample data and links to the data sets can be found here:</p>
+<div id="university-of-washington-data" class="section level4">
+<h4><a href="https://www.dropbox.com/sh/0sl53t0ija2l5sc/AABa-CP5oHoBxtqTZyBVOVj-a?dl=0">University of Washington Data</a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Course_Number</th>
+<th align="left">Course_Title</th>
+<th align="left">Primary_Instructor</th>
+<th align="right">A</th>
+<th align="right">A-</th>
+<th align="right">B+</th>
+<th align="right">B</th>
+<th align="right">B-</th>
+<th align="right">C+</th>
+<th align="right">C</th>
+<th align="right">C-</th>
+<th align="right">D+</th>
+<th align="right">D</th>
+<th align="right">D-</th>
+<th align="right">F</th>
+<th align="right">Average_GPA</th>
+<th align="right">Student_Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">INFO 498 A</td>
+<td align="left">TOPIC INFORMATICS</td>
+<td align="left">YAN, SIJIA</td>
+<td align="right">16</td>
+<td align="right">14</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3.8</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">INFO 498 D</td>
+<td align="left">TOPIC INFORMATICS</td>
+<td align="left">LEE, KYUNGMIN</td>
+<td align="right">5</td>
+<td align="right">21</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.5</td>
+<td align="right">34</td>
+</tr>
+<tr class="odd">
+<td align="left">INFO 498 E</td>
+<td align="left">TOPIC INFORMATICS</td>
+<td align="left">ROSS, JOEL</td>
+<td align="right">7</td>
+<td align="right">30</td>
+<td align="right">6</td>
+<td align="right">8</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">3.2</td>
+<td align="right">64</td>
+</tr>
+<tr class="even">
+<td align="left">INFO 498 F</td>
+<td align="left">TOPIC INFORMATICS</td>
+<td align="left">FREEMAN, MICHAEL</td>
+<td align="right">56</td>
+<td align="right">36</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3.7</td>
+<td align="right">101</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a description of the columns of the data for this dataset:</p>
+<ul>
+<li><strong>Course_Number</strong>: The name of the course as listed in the University course catalog. Contains the subject of the course.</li>
+<li><strong>Course_Title</strong>: The name of the course, holds the meaning of the class in words.</li>
+<li><strong>Primary_Instructor</strong>: The name of the instructor teaching the course.</li>
+<li><strong>A - F</strong>: The <em>number</em> of students who received the grade corresponding to the column title.</li>
+<li><strong>Average_GPA</strong>: The average GPA (Grade Point Average) of all the students in the course.</li>
+<li><strong>Student_Count</strong>: The number of students enroleld in the course.</li>
+</ul>
+</div>
+<div id="virginia-tech-data" class="section level4">
+<h4><a href="https://www.dropbox.com/sh/7p1d0cnv5u1suxz/AACBHZeG1zYPpFQZalgt_fNka?dl=0">Virginia Tech Data</a></h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">ï..Subject</th>
+<th align="left">Course_Title</th>
+<th align="left">Instructor</th>
+<th align="right">As</th>
+<th align="right">Bs</th>
+<th align="right">Cs</th>
+<th align="right">Ds</th>
+<th align="right">Fs</th>
+<th align="right">GPA</th>
+<th align="right">Number_of_students</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">CS</td>
+<td align="left">Intro to Programming in Java</td>
+<td align="left">Lewis</td>
+<td align="right">26.7</td>
+<td align="right">53.3</td>
+<td align="right">20.0</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">3.16</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">CS</td>
+<td align="left">Intro to Programming in Java</td>
+<td align="left">Lewis</td>
+<td align="right">38.7</td>
+<td align="right">54.8</td>
+<td align="right">6.5</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">3.31</td>
+<td align="right">31</td>
+</tr>
+<tr class="odd">
+<td align="left">CS</td>
+<td align="left">Intro to Programming in Java</td>
+<td align="left">Lewis</td>
+<td align="right">43.8</td>
+<td align="right">50.0</td>
+<td align="right">6.3</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">3.33</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="left">CS</td>
+<td align="left">Intro to Programming in Java</td>
+<td align="left">Lewis</td>
+<td align="right">51.5</td>
+<td align="right">39.4</td>
+<td align="right">9.1</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">3.37</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="left">CS</td>
+<td align="left">Intro to Programming in Java</td>
+<td align="left">Lewis</td>
+<td align="right">38.7</td>
+<td align="right">48.4</td>
+<td align="right">9.7</td>
+<td align="right">0.0</td>
+<td align="right">3.2</td>
+<td align="right">3.17</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">CS</td>
+<td align="left">Intro to Programming in Java</td>
+<td align="left">Lewis</td>
+<td align="right">23.1</td>
+<td align="right">57.7</td>
+<td align="right">11.5</td>
+<td align="right">3.8</td>
+<td align="right">3.8</td>
+<td align="right">2.90</td>
+<td align="right">26</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a description of the columns of the data for this dataset:</p>
+<ul>
+<li><strong>Subject</strong>: The subject of the course.</li>
+<li><strong>Course_Title</strong>: The name of the course, holds the meaning of the class in words.</li>
+<li><strong>Instructor</strong>: The last name of the instructor teaching the course.</li>
+<li><strong>As - Fs</strong>: The <em>proportion</em> of students who received the grade corresponding to the column title. Rounded to the nearest tenth.</li>
+<li><strong>Number_of_students</strong>: The number of students enrolled in the course.</li>
+</ul>
+</div>
 </div>
 
 
