@@ -8,7 +8,8 @@ my_ui <- fluidPage(
   mainPanel(
     tabsetPanel(type = "tabs",
                 tabPanel(
-                  'Introduction'
+                  'Introduction',
+                  includeHTML('./www/pages/introduction.html')
                 ),
                 tabPanel(
                   "Freshman Courses",

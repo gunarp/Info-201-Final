@@ -1,8 +1,8 @@
-library("shiny")
-library("ggplot2")
-library("tidyr")
-library("dplyr")
-library("stringr")
+require(shiny)||install.packages('shiny')
+require(ggplot2)||install.packages("ggplot2")
+require(tidyr)||install.packages("tidyr")
+require(dplyr)||install.packages("dplyr")
+require(stringr)||install.packages("stringr")
 
 
 source("my_ui.R")

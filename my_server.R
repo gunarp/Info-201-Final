@@ -1,5 +1,5 @@
-source('wrangle2.R')
 source('wrangle4.R')
+source('wrangle2.R')
 
 my_server <- function(input, output) {
   
