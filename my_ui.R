@@ -40,7 +40,7 @@ my_ui <- fluidPage(
                   ),
                   conditionalPanel(
                     "input.school_select_high == 'University of Washington'",
-                    p("This graph displays the top 10 departments at the at the University of Washington 
+                    p("This graph displays the top 10 departments at the University of Washington 
                        where  a number of classes in each of these departments have an average GPA at or above a 3.8. 
                        From this graph the English department and Sociology departments have the most number
                        of classes with 20 or more classes where students got high averages."),
@@ -97,20 +97,23 @@ my_ui <- fluidPage(
                          mainPanel(
                            titlePanel("Class Size"),
                            plotOutput("q4plot"),
-                           p("Typically, as class size increased, the average GPA decreased. This suggests that class size 
-                             and GPA are negatively correlated. We can see the effect of class size most significantly within 
-                             the math department with a major drop from a class of less than 25 students to a class of 25-50 
-                             students. Most other departments see a steady decrease in the average GPA as the class size 
-                             increases. English, although decreasing slightly, sees very little change in the average GPA 
-                             compared to the other departments."), 
+                           p("Typically, as class size increased, the average GPA decreased. This suggests that 
+                             class size and GPA are negatively correlated. We can see the effect of class size 
+                             most significantly within the math department with a major drop in the average GPA 
+                             from a class of less than 25 students to a class of 25-50 students. Most other 
+                             departments see a steady decrease in the average GPA as the class size increases, 
+                             with some notably larger drops. English, although decreasing slightly, sees very 
+                             little change in the average GPA despite its class size."), 
                            br(),
-                           p("The decreasing average GPA could be the result of multiple factors. Easier classes will typicaly 
-                             have higher GPA's and often times larger classes are general introduction courses and are 
-                             therefore easier than their smaller, more specified counterparts. Larger courses may also 
-                             have more resources (Teachers, Teaching Assistants, Office Hours, Study Centers) for them, 
-                             making it easier to do well in class. Additionally, the range of student abilities within 
-                             larger classes is typically much wider, limiting the scope of the class and the material covered. 
-                             This in turn lowers expectations and leads to easier assignments, midterms and finals.")
+                           p("The decreasing average GPA could be the result of multiple factors. Easier classes 
+                             will typically have higher GPA's and often times larger classes are general 
+                             introduction courses and are therefore easier than their smaller, more specified 
+                             counterparts. Larger courses may also have more resources (Teachers, Teaching 
+                             Assistants, Office Hours, Study Centers) for them, making it easier to do well in 
+                             that class. Additionally, the range of student abilities within larger classes is 
+                             typically much wider, limiting the scope of the class and the material covered. 
+                             This in turn lowers expectations and leads to easier assignments, midterms and 
+                             finals.")
                            )
                     )
     )
